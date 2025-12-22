@@ -174,14 +174,17 @@
                 if (distance < 0) {
                     clearInterval(countdownInterval);
                     
-                    // 1. Change Title
+                    // 1. Change Main Title Text
                     document.getElementById("main-title").innerText = "New Year, New Beginning";
 
-                    // 2. Hide Counter & Note
+                    // 2. Change Browser Tab Title
+                    document.title = "The Wait is Over";
+
+                    // 3. Hide Counter & Note
                     document.getElementById("countdown-display").classList.add("hidden");
                     document.getElementById("wait-note").classList.add("hidden");
                     
-                    // 3. Show Button
+                    // 4. Show Button
                     const actionArea = document.getElementById("action-area");
                     actionArea.classList.remove("hidden");
                     actionArea.classList.add("flex", "flex-col", "items-center");
