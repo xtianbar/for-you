@@ -29,7 +29,7 @@
     <style>
         body { font-family: 'Roboto', sans-serif; }
         .hidden-page { display: none !important; }
-        .fade-in { animation: fadeIn 0.6s ease-in; }
+        .fade-in { animation: fadeIn 0.8s ease-in; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
         /* Custom Range Slider */
@@ -78,7 +78,6 @@
 
             <section id="page-2" class="page-section hidden-page fade-in relative">
                 <button onclick="nextPage(1)" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
-                
                 <h2 class="text-2xl font-bold text-love-pink mb-6">How it Started</h2>
                 <p class="text-gray-600 mb-8 leading-relaxed text-left text-sm">
                     2025 was a year of unexpected turns. It started with heartbreak in January, and then again in July. I didn't think my heart was ready for anything new.
@@ -90,14 +89,11 @@
 
             <section id="page-3" class="page-section hidden-page fade-in relative">
                 <button id="btn-back-3" onclick="nextPage(2)" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1 hidden">&larr; Back</button>
-                
                 <h2 class="text-xl font-bold text-gray-700 mb-4">Level 1: The Beginning</h2>
                 <p class="text-gray-500 mb-4">To continue, enter the year we first met.</p>
                 <input type="number" id="ans-3" placeholder="YYYY" class="border-2 border-sky-200 rounded-lg p-2 w-full mb-4 text-center focus:outline-none focus:border-love-pink">
                 <p id="err-3" class="text-love-red text-sm hidden mb-2">Try again, love.</p>
-                
                 <button id="btn-check-3" onclick="checkAnswer(3, '2025')" class="bg-love-pink text-white px-6 py-2 rounded-full hover:bg-rose-400 transition">Unlock</button>
-                
                 <div id="success-3" class="hidden-page flex flex-col items-center">
                     <p class="text-success-green font-bold mb-3">You're right! It is August 2025❤️</p>
                     <button onclick="goToNewStory()" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Proceed to Next &rarr;</button>
@@ -233,35 +229,25 @@
             </section>
 
             <section id="page-7" class="page-section hidden-page fade-in relative">
-    <button id="btn-back-7" onclick="nextPage(6)" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
-
-    <h2 class="text-xl font-bold text-gray-700 mb-4">Level 5: Memory</h2>
-    <p class="text-gray-500 mb-4">Where was our first date location?</p>
-    
-    <input type="text" id="ans-7" placeholder="City or Place" class="border-2 border-sky-200 rounded-lg p-2 w-full mb-4 text-center focus:outline-none focus:border-love-pink">
-    
-    <p id="err-7" class="text-love-red text-sm hidden mb-2">Mali po! Hint: Coffee shop? ☕</p>
-
-    <button id="btn-check-7" onclick="checkAnswer(7, 'Cafe Uno')" class="bg-love-pink text-white px-6 py-2 rounded-full hover:bg-rose-400 transition">Unlock</button>
-
-     <div id="success-7" class="hidden-page flex flex-col items-center">
-        <p class="text-success-green font-bold mb-3">I remember too. ❤️</p>
-        <button onclick="goToDateQuestion()" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Proceed to Next &rarr;</button>
-    </div>
-</section>
+                <button id="btn-back-7" onclick="nextPage(6)" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
+                <h2 class="text-xl font-bold text-gray-700 mb-4">Level 5: Memory</h2>
+                <p class="text-gray-500 mb-4">Where was our first date location?</p>
+                <input type="text" id="ans-7" placeholder="City or Place" class="border-2 border-sky-200 rounded-lg p-2 w-full mb-4 text-center focus:outline-none focus:border-love-pink">
+                <p id="err-7" class="text-love-red text-sm hidden mb-2">Mali po! Hint: Coffee shop? ☕</p>
+                <button id="btn-check-7" onclick="checkTextAnswer(7, 'Cafe Uno')" class="bg-love-pink text-white px-6 py-2 rounded-full hover:bg-rose-400 transition">Unlock</button>
+                 <div id="success-7" class="hidden-page flex flex-col items-center">
+                    <p class="text-success-green font-bold mb-3">I remember too. ❤️</p>
+                    <button onclick="goToDateQuestion()" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Proceed to Next &rarr;</button>
+                </div>
+            </section>
 
             <section id="page-date-q" class="page-section hidden-page fade-in relative">
                 <button onclick="backToPage7()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
-
                 <h2 class="text-xl font-bold text-gray-700 mb-4">Level 5.5: Time</h2>
                 <p class="text-gray-500 mb-4">When exactly is this?</p>
-                
                 <input type="date" id="ans-date" class="border-2 border-sky-200 rounded-lg p-2 w-full mb-4 text-center focus:outline-none focus:border-love-pink text-gray-600">
-                
                 <p id="err-date" class="text-love-red text-sm hidden mb-2">Think back... October?</p>
-
                 <button id="btn-check-date" onclick="checkDateAnswer()" class="bg-love-pink text-white px-6 py-2 rounded-full hover:bg-rose-400 transition">Submit</button>
-
                 <div id="success-date" class="hidden-page flex flex-col items-center mt-4">
                     <p class="text-success-green font-bold mb-3">A date to remember. 📅</p>
                     <button onclick="goToDateStory()" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Continue &rarr;</button>
@@ -270,42 +256,114 @@
 
             <section id="story-date-memory" class="page-section hidden-page fade-in relative">
                 <button onclick="backToDateQuestion()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
-
                 <h2 class="text-xl font-bold text-love-pink mb-4">Unforgettable</h2>
-                
                 <div class="text-gray-600 mb-6 leading-relaxed text-sm text-left space-y-4">
                     <p>This is an unforgettable day, lots of my first times.</p>
                     <p>First time kong makipag-date, sharing umbrella uray no ipaidam mo hahaha tapos yung "ssssshhhhh" natin hahahaha.</p>
                 </div>
-		
-	<div class="text-gray-600 mb-6 leading-relaxed text-sm text-left space-y-4">
+                <div class="text-gray-600 mb-6 leading-relaxed text-sm text-left space-y-4">
                     <p>Then madami na ding coffee dates ang sumonod and hopefully madami pang dates in the future hehehe.</p>
                 </div>
-
                 <div class="bg-yellow-50 border-2 border-dashed border-yellow-200 p-4 rounded-xl mb-6 shadow-sm text-left">
                     <span class="text-xs font-bold text-yellow-600 uppercase tracking-widest block mb-2">🍌 Trivia on our first date</span>
                     <p class="text-gray-600 text-sm italic">
                         Naalala ko pa yung inorder mong pagkain Banana Crepe pero hindi available kaya Strawberry na lang pero hindi mo yun inubos hahaha.
                     </p>
                 </div>
-
                 <button onclick="nextPage(8)" class="bg-romance-dark text-white px-8 py-3 rounded-full hover:bg-sky-600 transition shadow-md">Next Level &rarr;</button>
             </section>
+
             <section id="page-8" class="page-section hidden-page fade-in relative">
                 <button id="btn-back-8" onclick="backToDateStory()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
-
                 <h2 class="text-xl font-bold text-gray-700 mb-4">Level 6: Us</h2>
                 <p class="text-gray-500 mb-4">What do I usually call you?</p>
                 <input type="text" id="ans-8" placeholder="..." class="border-2 border-sky-200 rounded-lg p-2 w-full mb-4 text-center focus:outline-none focus:border-love-pink">
                 <button id="btn-check-8" onclick="checkTextAnswer(8, 'bebe')" class="bg-romance-dark text-white px-6 py-2 rounded-full hover:bg-sky-600 transition">Check</button>
                  <div id="success-8" class="hidden-page flex flex-col items-center">
                     <p class="text-success-green font-bold mb-3">Tama, bebe 😘 hehe</p>
-                    <button onclick="nextPage(9)" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Proceed to Next &rarr;</button>
+                    <button onclick="goToPlaceQuestion()" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Proceed to Next &rarr;</button>
                 </div>
             </section>
 
+            <section id="page-place-q" class="page-section hidden-page fade-in relative">
+                <button onclick="backToPage8()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
+                <h2 class="text-xl font-bold text-gray-700 mb-4">Level 6.5: Secret Place</h2>
+                <p class="text-gray-500 mb-4">What is our favorite place?</p>
+                <input type="text" id="ans-place" placeholder="Answer..." class="border-2 border-sky-200 rounded-lg p-2 w-full mb-4 text-center focus:outline-none focus:border-love-pink">
+                <p id="err-place" class="text-love-red text-sm hidden mb-2">Hint: It's quiet and dimly lit...</p>
+                <button id="btn-check-place" onclick="checkPlaceAnswer()" class="bg-love-pink text-white px-6 py-2 rounded-full hover:bg-rose-400 transition">Submit</button>
+                <div id="success-place" class="hidden-page flex flex-col items-center mt-4">
+                    <p class="text-success-green font-bold mb-3">Correct! 🤫</p>
+                    <button onclick="goToPlaceStory()" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Continue &rarr;</button>
+                </div>
+            </section>
+
+            <section id="story-place" class="page-section hidden-page fade-in relative">
+                <button onclick="backToPlaceQuestion()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
+                <h2 class="text-xl font-bold text-gray-600 mb-4">🏢 Dark Stairs</h2>
+                <div class="bg-gray-50 border-l-4 border-gray-400 p-4 text-gray-700 text-sm leading-relaxed text-left">
+                    <p>Yes you are right, our favorite meeting place in the hospital is the <strong>dark stairs</strong> hehehe.</p>
+                    <br>
+                    <p>Since our relationship or friendship is still unknown to most people yet, that's why we came up with this method. 🤫❤️</p>
+                </div>
+                <button onclick="goTo143()" class="bg-romance-dark text-white px-8 py-3 mt-6 rounded-full hover:bg-sky-600 transition shadow-md">Next Level &rarr;</button>
+            </section>
+
+            <section id="page-143" class="page-section hidden-page fade-in relative">
+                <button onclick="backToPlaceStory()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
+                <h2 class="text-xl font-bold text-blue-900 mb-4">Logic Question</h2>
+                <p class="text-gray-600 mb-6">How many "I love you's" have I sent to you?</p>
+                <input type="number" id="ans-143" placeholder="Enter a number..." class="border-2 border-blue-200 rounded-lg p-2 w-full mb-4 text-center focus:outline-none focus:border-blue-500">
+                <button id="btn-check-143" onclick="check143()" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition shadow-md">Submit Answer</button>
+                <p id="err-143" class="text-red-500 mt-2 hidden text-sm font-medium">Think deeper...</p>
+                <div id="success-143" class="hidden-page flex flex-col items-center mt-4">
+                    <p class="text-success-green font-bold mb-3">143... I love you! ❤️</p>
+                    <button onclick="goToTwice()" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Continue &rarr;</button>
+                </div>
+            </section>
+
+            <section id="page-twice" class="page-section hidden-page fade-in relative">
+                <button onclick="backTo143()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
+                <h2 class="text-xl font-bold text-pink-600 mb-4">Special Question: Level 21:29</h2>
+                <p class="text-gray-700 mb-6">What is love?</p>
+                <input type="text" id="ans-twice" placeholder="Answer..." class="border-2 border-pink-300 rounded-lg p-2 w-full mb-4 text-center focus:outline-none focus:border-pink-500">
+                <button id="btn-check-twice" onclick="checkTwice()" class="bg-pink-500 text-white px-6 py-2 rounded-full hover:bg-pink-600 transition shadow-md">Submit Answer</button>
+                <p id="err-twice" class="text-red-500 mt-2 hidden text-sm">Wrong. Hint: It's a group!</p>
+                <div id="success-twice" class="hidden-page flex flex-col items-center mt-4">
+                    <p class="text-pink-500 font-bold mb-3">TWICE! 🍭</p>
+                    <button onclick="goToTwiceStory()" class="bg-pink-500 text-white px-6 py-2 rounded-full hover:bg-pink-600 transition shadow-md">See Trivia &rarr;</button>
+                </div>
+            </section>
+
+            <section id="story-twice" class="page-section hidden-page fade-in relative">
+                <button onclick="backToTwice()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
+                <h2 class="text-xl font-bold text-purple-600 mb-2">✨ TWICE Trivia</h2>
+                <div class="bg-purple-50 p-4 rounded-lg mb-6 text-left border border-purple-100">
+                    <p class="text-gray-700 text-sm">
+                        Did you know? TWICE was formed through the survival show <em>Sixteen</em>. 
+                        Their official colors are <span class="text-yellow-500 font-bold">Apricot</span> and <span class="text-pink-500 font-bold">Neon Magenta</span>!
+                    </p>
+                </div>
+                <div class="border-2 border-dashed border-blue-400 p-4 rounded-xl bg-blue-50 mb-6">
+                    <h2 class="text-lg font-bold text-blue-800 mb-2">🎵 Special Task</h2>
+                    <p class="text-gray-600 mb-4 text-sm">Post an IG New Music Note with this song:</p>
+                    <div class="flex items-center justify-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+                        <div class="bg-pink-500 text-white p-2 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-2v13" />
+                            </svg>
+                        </div>
+                        <div class="text-left">
+                            <p class="font-bold text-gray-800 text-sm">What is Love?</p>
+                            <p class="text-xs text-gray-500">TWICE</p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="nextPage(9)" class="bg-romance-dark text-white px-8 py-3 rounded-full hover:bg-sky-600 transition shadow-md">Next Level &rarr;</button>
+            </section>
+
             <section id="page-9" class="page-section hidden-page fade-in relative">
-                <button id="btn-back-9" onclick="nextPage(8)" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
+                <button id="btn-back-9" onclick="backToTwiceStory()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
                 <h2 class="text-xl font-bold text-gray-700 mb-4">Level 7: Logic</h2>
                 <p class="text-gray-500 mb-4">If 1 + 1 = 2, then Me + You = ?</p>
                 <div id="grid-9" class="flex justify-center gap-4">
@@ -315,12 +373,31 @@
                 <p id="err-9" class="text-love-red text-sm hidden mt-4">Think deeper...</p>
                 <div id="success-9" class="hidden-page flex flex-col items-center">
                     <p class="text-success-green font-bold mb-3">Always. ♾️</p>
-                    <button onclick="nextPage(10)" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Proceed to Next &rarr;</button>
+                    <button onclick="goToAppreciation()" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Proceed to Next &rarr;</button>
                 </div>
             </section>
 
+            <section id="page-appreciation" class="page-section hidden-page fade-in relative">
+                <button onclick="backToLogic()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
+                
+                <h2 class="text-xl font-bold text-love-pink mb-6">Before you proceed...</h2>
+                <p class="text-gray-500 text-xs mb-6 italic">Please take a moment to read this.</p>
+
+                <div class="text-gray-700 space-y-3 mb-8 text-sm font-medium leading-relaxed tracking-wide">
+                    <p>THANK YOU FOR COMING INTO MY LIFE</p>
+                    <p>THANK YOU FOR MAKING ME SMILE AND LAUGH</p>
+                    <p>THANK YOU FOR BEING SO UNDERSTANDING</p>
+                    <p>THANK YOU FOR BEING MY BIGGEST SUPPORTER</p>
+                    <p>THANK YOU FOR CARING ABOUT ME</p>
+                    <p class="font-bold text-love-red pt-4 transform scale-105">I REALLY APPRECIATE YOU SO MUCH</p>
+                    <p class="font-bold text-love-red text-lg">I LOVE YOU A LOT ❤️</p>
+                </div>
+
+                <button onclick="nextPage(10)" class="bg-romance-dark text-white px-8 py-3 rounded-full hover:bg-sky-600 transition shadow-md">I'm ready</button>
+            </section>
+
             <section id="page-10" class="page-section hidden-page fade-in relative">
-                <button onclick="nextPage(9)" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
+                <button onclick="backToAppreciation()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
                 <h2 class="text-xl font-bold text-gray-700 mb-4">Almost There</h2>
                 <p class="text-gray-600 mb-6 leading-relaxed">
                     You've unlocked every door. There is only one question left. 
@@ -373,11 +450,18 @@
     <script>
         // === CONFIGURATION ===
         const answers = {
-            3: "2025",         // Year met (Page 3)
+            3: "2025",        // Year met (Page 3)
             5: "banew",     // Riddle answer (Page 5)
-            7: "cafe uno",         // First date location (Page 7)
+            7: "cafe uno",        // First date location (Page 7)
             8: "bebe"       // nickname (Page 8)
         };
+
+        // --- Hints for 143 ---
+        const hints143 = [
+            "this is basic math",
+            "do the math",
+            "think deeper..."
+        ];
 
         function nextPage(pageNumber) {
             document.querySelectorAll('.page-section').forEach(el => {
@@ -386,7 +470,7 @@
             const page = document.getElementById(`page-${pageNumber}`);
             if(page) {
                 page.classList.remove('hidden-page');
-                const percent = (pageNumber - 1) * 10; 
+                const percent = (pageNumber - 1) * 9; 
                 document.getElementById('progress-bar').style.width = `${percent}%`;
             }
         }
@@ -429,24 +513,93 @@
         function backToMottoQuestion() { document.getElementById('story-motto').classList.add('hidden-page'); document.getElementById('page-motto-q').classList.remove('hidden-page'); }
         function backToMottoStory() { document.getElementById('page-6').classList.add('hidden-page'); document.getElementById('story-motto').classList.remove('hidden-page'); }
 
-        // --- STORY 4: DATE MEMORY (NEW) ---
+        // --- STORY 4: DATE MEMORY ---
         function goToDateQuestion() { document.getElementById('page-7').classList.add('hidden-page'); document.getElementById('page-date-q').classList.remove('hidden-page'); }
         function backToPage7() { document.getElementById('page-date-q').classList.add('hidden-page'); document.getElementById('page-7').classList.remove('hidden-page'); }
-        
         function checkDateAnswer() {
             const input = document.getElementById('ans-date');
-            // Validating for 2025-10-02
             if (input.value === '2025-10-02') {
                 input.classList.add('border-green-500', 'bg-green-50'); input.disabled = true; document.getElementById('err-date').classList.add('hidden');
                 document.getElementById('btn-check-date').classList.add('hidden-page'); document.getElementById('success-date').classList.remove('hidden-page');
             } else { document.getElementById('err-date').classList.remove('hidden'); input.classList.add('border-red-400'); }
         }
-
         function goToDateStory() { document.getElementById('page-date-q').classList.add('hidden-page'); document.getElementById('story-date-memory').classList.remove('hidden-page'); }
         function backToDateQuestion() { document.getElementById('story-date-memory').classList.add('hidden-page'); document.getElementById('page-date-q').classList.remove('hidden-page'); }
-        
-        // This connects Page 8 Back button to the new Date Story
         function backToDateStory() { document.getElementById('page-8').classList.add('hidden-page'); document.getElementById('story-date-memory').classList.remove('hidden-page'); }
+
+        // --- STORY 5: SECRET PLACE ---
+        function goToPlaceQuestion() { document.getElementById('page-8').classList.add('hidden-page'); document.getElementById('page-place-q').classList.remove('hidden-page'); }
+        function backToPage8() { document.getElementById('page-place-q').classList.add('hidden-page'); document.getElementById('page-8').classList.remove('hidden-page'); }
+        
+        function checkPlaceAnswer() {
+            const input = document.getElementById('ans-place');
+            const correctAnswers = ['dark stairs'];
+            if (correctAnswers.includes(input.value.toLowerCase().trim())) {
+                input.classList.add('border-green-500', 'bg-green-50'); input.disabled = true; document.getElementById('err-place').classList.add('hidden');
+                document.getElementById('btn-check-place').classList.add('hidden-page'); document.getElementById('success-place').classList.remove('hidden-page');
+            } else { document.getElementById('err-place').classList.remove('hidden'); input.classList.add('border-red-400'); }
+        }
+
+        function goToPlaceStory() { document.getElementById('page-place-q').classList.add('hidden-page'); document.getElementById('story-place').classList.remove('hidden-page'); }
+        function backToPlaceQuestion() { document.getElementById('story-place').classList.add('hidden-page'); document.getElementById('page-place-q').classList.remove('hidden-page'); }
+        
+        // --- 143 / TWICE / TRIVIA FUNCTIONS ---
+
+        function goTo143() { document.getElementById('story-place').classList.add('hidden-page'); document.getElementById('page-143').classList.remove('hidden-page'); }
+        function backToPlaceStory() { document.getElementById('page-143').classList.add('hidden-page'); document.getElementById('story-place').classList.remove('hidden-page'); }
+
+        function check143() {
+            const input = document.getElementById('ans-143');
+            const errorMsg = document.getElementById('err-143');
+            const val = input.value.trim();
+
+            if (val === '143') {
+                input.classList.add('border-green-500', 'bg-green-50'); 
+                input.disabled = true; 
+                errorMsg.classList.add('hidden');
+                document.getElementById('btn-check-143').classList.add('hidden-page'); 
+                document.getElementById('success-143').classList.remove('hidden-page');
+            } else if (val === '3000') {
+                errorMsg.innerText = "nice try.. but it is not the right answer hahaha";
+                errorMsg.classList.remove('hidden');
+                input.classList.add('border-red-400');
+            } else {
+                const randomHint = hints143[Math.floor(Math.random() * hints143.length)];
+                errorMsg.innerText = randomHint;
+                errorMsg.classList.remove('hidden');
+                input.classList.add('border-red-400');
+            }
+        }
+
+        function goToTwice() { document.getElementById('page-143').classList.add('hidden-page'); document.getElementById('page-twice').classList.remove('hidden-page'); }
+        function backTo143() { document.getElementById('page-twice').classList.add('hidden-page'); document.getElementById('page-143').classList.remove('hidden-page'); }
+
+        function checkTwice() {
+            const input = document.getElementById('ans-twice');
+            if (input.value.trim().toLowerCase() === 'twice') {
+                input.classList.add('border-pink-500', 'bg-pink-50'); input.disabled = true; document.getElementById('err-twice').classList.add('hidden');
+                document.getElementById('btn-check-twice').classList.add('hidden-page'); document.getElementById('success-twice').classList.remove('hidden-page');
+            } else { document.getElementById('err-twice').classList.remove('hidden'); input.classList.add('border-red-400'); }
+        }
+
+        function goToTwiceStory() { document.getElementById('page-twice').classList.add('hidden-page'); document.getElementById('story-twice').classList.remove('hidden-page'); }
+        function backToTwice() { document.getElementById('story-twice').classList.add('hidden-page'); document.getElementById('page-twice').classList.remove('hidden-page'); }
+        function backToTwiceStory() { document.getElementById('page-9').classList.add('hidden-page'); document.getElementById('story-twice').classList.remove('hidden-page'); }
+
+
+        // --- APPRECIATION PAGE LOGIC ---
+        function goToAppreciation() {
+            document.getElementById('page-9').classList.add('hidden-page');
+            document.getElementById('page-appreciation').classList.remove('hidden-page');
+        }
+        function backToLogic() {
+            document.getElementById('page-appreciation').classList.add('hidden-page');
+            document.getElementById('page-9').classList.remove('hidden-page');
+        }
+        function backToAppreciation() {
+            document.getElementById('page-10').classList.add('hidden-page');
+            document.getElementById('page-appreciation').classList.remove('hidden-page');
+        }
 
 
         // --- GENERIC HELPERS ---
@@ -465,32 +618,20 @@
             } else { document.getElementById(`err-${page}`).classList.remove('hidden'); input.classList.add('border-red-400'); }
         }
 
-        // FIND THIS FUNCTION IN YOUR CODE AND REPLACE IT WITH THIS:
-
-// REPLACE YOUR OLD checkTextAnswer FUNCTION WITH THIS ONE:
-function checkTextAnswer(page, defaultVal) {
-    const input = document.getElementById(`ans-${page}`);
-    
-    // 1. Get the expected answer (either from the top list or the button)
-    let expected = answers[page] || defaultVal;
-    
-    // 2. Convert BOTH the user input and the expected answer to lowercase
-    // This ensures "Cafe Uno" equals "cafe uno"
-    if (input.value.toLowerCase().trim() === expected.toLowerCase()) {
-        
-        // Success Styling
-        input.classList.remove('border-red-400');
-        input.classList.add('border-green-500', 'bg-green-50', 'text-green-700');
-        input.disabled = true;
-        
-        showSuccess(page);
-    } else {
-        // Error Styling
-        input.value = "";
-        input.placeholder = "Try again...";
-        input.classList.add('border-red-400');
-    }
-}
+        function checkTextAnswer(page, defaultVal) {
+            const input = document.getElementById(`ans-${page}`);
+            let expected = answers[page] || defaultVal;
+            if (input.value.toLowerCase().trim() === expected.toLowerCase()) {
+                input.classList.remove('border-red-400');
+                input.classList.add('border-green-500', 'bg-green-50', 'text-green-700');
+                input.disabled = true;
+                showSuccess(page);
+            } else {
+                input.value = "";
+                input.placeholder = "Try again...";
+                input.classList.add('border-red-400');
+            }
+        }
 
         function wrongAnswer(page) { document.getElementById(`err-${page}`).classList.remove('hidden'); }
 
