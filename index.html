@@ -21,6 +21,7 @@
                         'success-green': '#10b981',
                         'kobe-purple': '#552583',
                         'kobe-gold': '#FDB927',
+                        'messenger-blue': '#0084FF',
                     }
                 }
             }
@@ -29,31 +30,17 @@
     <style>
         body { font-family: 'Roboto', sans-serif; }
         .hidden-page { display: none !important; }
-        .fade-in { animation: fadeIn 0.8s ease-in; }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
+        /* Chat Bubble Styling */
+        .chat-me { align-self: flex-end; background-color: #0084FF; color: white; border-radius: 18px 18px 4px 18px; }
+        .chat-her { align-self: flex-start; background-color: #f3f4f6; color: black; border-radius: 18px 18px 18px 4px; }
+
         /* Custom Range Slider */
-        input[type=range] {
-            -webkit-appearance: none; 
-            background: transparent; 
-        }
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            background: #fda4af; 
-            cursor: pointer;
-            margin-top: -8px; 
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-        }
-        input[type=range]::-webkit-slider-runnable-track {
-            width: 100%;
-            height: 8px;
-            cursor: pointer;
-            background: #e0f2fe;
-            border-radius: 5px;
-        }
+        input[type=range] { -webkit-appearance: none; background: transparent; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 24px; width: 24px; border-radius: 50%; background: #fda4af; cursor: pointer; margin-top: -8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 8px; cursor: pointer; background: #e0f2fe; border-radius: 5px; }
     </style>
 </head>
 <body class="bg-romance-blue min-h-screen flex items-center justify-center p-4">
@@ -127,7 +114,7 @@
 
             <section id="story-reveal" class="page-section hidden-page fade-in relative">
                 <button onclick="backToBio()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
-                <h2 class="text-xl font-bold text-love-pink mb-4">Para-paraan</h2>
+                <h2 class="text-xl font-bold text-love-pink mb-4">Para-paraan HAHAHA</h2>
                 <div class="text-gray-600 mb-6 leading-relaxed text-sm text-left space-y-4">
                    <p>Bareng saan pay nakapag-bio kunak sunga dinamag ko nu nalpas ka nagbiometrics.n ngem di inbagam nga nalpas kan ket "awan manen" hahahaha kunak toy bagik</p>
                    <p>sunga nakigtot nak di umay ka dijay office min nga agpa-biometrics kan sunga naibagak nga kunak man nu nalpas kan ngem jay isem kon ket dumanon toy lapayag kon ti ragsak kon hahaha</p>
@@ -146,7 +133,7 @@
                     <button onclick="wrongAnswer(4)" class="bg-yellow-200 p-4 rounded-xl text-yellow-800 hover:bg-yellow-300 transition">Yellow</button>
                     <button onclick="wrongAnswer(4)" class="bg-purple-200 p-4 rounded-xl text-purple-800 hover:bg-purple-300 transition">Purple</button>
                 </div>
-                <p id="err-4" class="text-love-red text-sm hidden mt-4">Not quite!</p>
+                <p id="err-4" class="text-love-red text-sm hidden mt-4">okay po ate!</p>
                 <div id="success-4" class="hidden-page flex flex-col items-center mt-4">
                     <div class="bg-blue-500 text-white w-full p-4 rounded-xl mb-4 shadow-md">Blue is correct! 💙</div>
                     <button onclick="goToBlueStory()" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Proceed to Next &rarr;</button>
@@ -219,7 +206,7 @@
                 </div>
                 <div class="h-6 mb-4">
                     <p class="text-xs text-gray-400" id="slider-hint">Slide it all the way to the right.</p>
-                    <p id="err-6" class="text-love-red font-bold text-sm hidden animate-bounce">Higher! Much higher! ❤️</p>
+                    <p id="err-6" class="text-love-red font-bold text-sm hidden animate-bounce">ay! su ah! ❤️</p>
                 </div>
                 <button id="btn-check-6" onclick="checkSlider(6)" class="bg-romance-dark text-white px-6 py-2 rounded-full hover:bg-sky-600 transition">Check</button>
                  <div id="success-6" class="hidden-page flex flex-col items-center">
@@ -281,19 +268,44 @@
                 <button id="btn-check-8" onclick="checkTextAnswer(8, 'bebe')" class="bg-romance-dark text-white px-6 py-2 rounded-full hover:bg-sky-600 transition">Check</button>
                  <div id="success-8" class="hidden-page flex flex-col items-center">
                     <p class="text-success-green font-bold mb-3">Tama, bebe 😘 hehe</p>
-                    <button onclick="goToPlaceQuestion()" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Proceed to Next &rarr;</button>
+                    <button onclick="goToChatStory()" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Proceed to Next &rarr;</button>
                 </div>
             </section>
 
-            <section id="page-place-q" class="page-section hidden-page fade-in relative">
+            <section id="story-chat" class="page-section hidden-page fade-in relative">
                 <button onclick="backToPage8()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
+                
+                <h2 class="text-xl font-bold text-messenger-blue mb-4">Nagsimula lang sa</h2>
+                
+                <div class="flex flex-col space-y-2 mb-6 w-full text-sm px-2 h-64 overflow-y-auto border border-gray-100 rounded-lg p-2 bg-white shadow-inner">
+                    <div class="chat-me p-2 px-3">👋</div>
+                    <div class="chat-her p-2 px-3">Sir IT?</div>
+                    <div class="chat-me p-2 px-3">maam nurse?</div>
+                    <div class="chat-me p-2 px-3">HAHAHAHA</div>
+                    <div class="chat-her p-2 px-3">Apay sir? Hahaha</div>
+                    <div class="chat-me p-2 px-3">awan maam... hi sayo HAHAHA</div>
+                    <div class="chat-her p-2 px-3">Hello hahaha</div>
+                    <div class="chat-me p-2 px-3">awan pelyedom maam? hahaha</div>
+                    <div class="chat-her p-2 px-3">Adda a sir hahaha</div>
+                    <div class="chat-me p-2 px-3">kunak nu awan.. ikkan ka kuma hahahaha</div>
+                </div>
+
+                <div class="text-gray-500 text-xs italic mb-6 leading-relaxed">
+                    until we call each other "bebe" and late night talks with "i love you's" at the end of conversation hehehe
+                </div>
+
+                <button onclick="goToPlaceQuestion()" class="bg-romance-dark text-white px-8 py-3 rounded-full hover:bg-sky-600 transition shadow-md">Next Level &rarr;</button>
+            </section>
+
+            <section id="page-place-q" class="page-section hidden-page fade-in relative">
+                <button onclick="backToChatStory()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
                 <h2 class="text-xl font-bold text-gray-700 mb-4">Level 6.5: Secret Place</h2>
                 <p class="text-gray-500 mb-4">What is our favorite place?</p>
                 <input type="text" id="ans-place" placeholder="Answer..." class="border-2 border-sky-200 rounded-lg p-2 w-full mb-4 text-center focus:outline-none focus:border-love-pink">
                 <p id="err-place" class="text-love-red text-sm hidden mb-2">Hint: It's quiet and dimly lit...</p>
                 <button id="btn-check-place" onclick="checkPlaceAnswer()" class="bg-love-pink text-white px-6 py-2 rounded-full hover:bg-rose-400 transition">Submit</button>
                 <div id="success-place" class="hidden-page flex flex-col items-center mt-4">
-                    <p class="text-success-green font-bold mb-3">Correct! 🤫</p>
+                    <p class="text-success-green font-bold mb-3">sssshhhh! 🤫</p>
                     <button onclick="goToPlaceStory()" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Continue &rarr;</button>
                 </div>
             </section>
@@ -325,7 +337,7 @@
             <section id="page-twice" class="page-section hidden-page fade-in relative">
                 <button onclick="backTo143()" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
                 <h2 class="text-xl font-bold text-pink-600 mb-4">Special Question: Level 21:29</h2>
-                <p class="text-gray-700 mb-6">What is love?</p>
+                <p class="text-gray-700 mb-6">What is Love?</p>
                 <input type="text" id="ans-twice" placeholder="Answer..." class="border-2 border-pink-300 rounded-lg p-2 w-full mb-4 text-center focus:outline-none focus:border-pink-500">
                 <button id="btn-check-twice" onclick="checkTwice()" class="bg-pink-500 text-white px-6 py-2 rounded-full hover:bg-pink-600 transition shadow-md">Submit Answer</button>
                 <p id="err-twice" class="text-red-500 mt-2 hidden text-sm">Wrong. Hint: It's a group!</p>
@@ -410,7 +422,7 @@
             <section id="page-11" class="page-section hidden-page fade-in relative">
                 <button onclick="nextPage(10)" class="absolute top-[-30px] left-0 text-gray-400 hover:text-gray-600 text-sm transition flex items-center gap-1">&larr; Back</button>
                 <h1 class="text-2xl font-bold text-love-red mb-2">The Final Question</h1>
-                <p class="text-gray-500 mb-8">Choose wisely, my love.</p>
+                <p class="text-gray-500 mb-8">Choose wisely, my nurse.</p>
                 <div class="space-y-4 w-full">
                     <div class="bg-sky-50 p-4 rounded-xl border border-sky-100">
                         <p class="text-sky-800 font-medium mb-2">Should I court you?</p>
@@ -437,7 +449,6 @@
                 <div class="absolute bottom-[-50px] left-[-50px] w-32 h-32 bg-white opacity-20 rounded-full"></div>
                 <h3 class="text-white text-3xl font-bold mb-2 z-10">My Answer is</h3>
                 <h1 class="text-white text-6xl font-black z-10 tracking-widest">YES</h1>
-                <p id="card-context" class="text-white opacity-80 mt-4 text-sm z-10"></p>
             </div>
             <a href="https://instagram.com" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full shadow-lg hover:opacity-90 transition">
                 Open Instagram
@@ -527,9 +538,17 @@
         function backToDateQuestion() { document.getElementById('story-date-memory').classList.add('hidden-page'); document.getElementById('page-date-q').classList.remove('hidden-page'); }
         function backToDateStory() { document.getElementById('page-8').classList.add('hidden-page'); document.getElementById('story-date-memory').classList.remove('hidden-page'); }
 
-        // --- STORY 5: SECRET PLACE ---
-        function goToPlaceQuestion() { document.getElementById('page-8').classList.add('hidden-page'); document.getElementById('page-place-q').classList.remove('hidden-page'); }
-        function backToPage8() { document.getElementById('page-place-q').classList.add('hidden-page'); document.getElementById('page-8').classList.remove('hidden-page'); }
+        // --- STORY 5: SECRET PLACE & CHAT ---
+        function goToPlaceQuestion() { 
+            // FIXED: Hide the Chat Story, NOT Page 8
+            document.getElementById('story-chat').classList.add('hidden-page'); 
+            document.getElementById('page-place-q').classList.remove('hidden-page'); 
+        }
+        function backToPage8() { 
+            // FIXED: Hide the Chat Story, Show Page 8
+            document.getElementById('story-chat').classList.add('hidden-page'); 
+            document.getElementById('page-8').classList.remove('hidden-page'); 
+        }
         
         function checkPlaceAnswer() {
             const input = document.getElementById('ans-place');
@@ -540,6 +559,18 @@
             } else { document.getElementById('err-place').classList.remove('hidden'); input.classList.add('border-red-400'); }
         }
 
+        // --- CHAT STORY FUNCTIONS ---
+        function goToChatStory() { 
+            document.getElementById('page-8').classList.add('hidden-page'); 
+            document.getElementById('story-chat').classList.remove('hidden-page'); 
+        }
+        
+        function backToChatStory() { 
+            // FIXED: Hide Question, Show Chat
+            document.getElementById('page-place-q').classList.add('hidden-page'); 
+            document.getElementById('story-chat').classList.remove('hidden-page'); 
+        }
+        
         function goToPlaceStory() { document.getElementById('page-place-q').classList.add('hidden-page'); document.getElementById('story-place').classList.remove('hidden-page'); }
         function backToPlaceQuestion() { document.getElementById('story-place').classList.add('hidden-page'); document.getElementById('page-place-q').classList.remove('hidden-page'); }
         
