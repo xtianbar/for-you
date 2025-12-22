@@ -305,7 +305,7 @@
                 <p id="err-place" class="text-love-red text-sm hidden mb-2">Hint: It's quiet and dimly lit...</p>
                 <button id="btn-check-place" onclick="checkPlaceAnswer()" class="bg-love-pink text-white px-6 py-2 rounded-full hover:bg-rose-400 transition">Submit</button>
                 <div id="success-place" class="hidden-page flex flex-col items-center mt-4">
-                    <p class="text-success-green font-bold mb-3">sssshhhh! 🤫</p>
+                    <p class="text-success-green font-bold mb-3">Correct! 🤫</p>
                     <button onclick="goToPlaceStory()" class="bg-success-green text-white px-6 py-2 rounded-full hover:bg-green-600 transition shadow-md">Continue &rarr;</button>
                 </div>
             </section>
@@ -585,6 +585,7 @@
             const val = input.value.trim();
 
             if (val === '143') {
+                input.classList.remove('border-red-400'); // ADDED
                 input.classList.add('border-green-500', 'bg-green-50'); 
                 input.disabled = true; 
                 errorMsg.classList.add('hidden');
@@ -607,10 +608,22 @@
 
         function checkTwice() {
             const input = document.getElementById('ans-twice');
-            if (input.value.trim().toLowerCase() === 'twice') {
+            const errorMsg = document.getElementById('err-twice');
+            const val = input.value.trim().toLowerCase();
+
+            if (val === 'twice') {
+                input.classList.remove('border-red-400'); // ADDED
                 input.classList.add('border-pink-500', 'bg-pink-50'); input.disabled = true; document.getElementById('err-twice').classList.add('hidden');
                 document.getElementById('btn-check-twice').classList.add('hidden-page'); document.getElementById('success-twice').classList.remove('hidden-page');
-            } else { document.getElementById('err-twice').classList.remove('hidden'); input.classList.add('border-red-400'); }
+            } else if (val.includes('blackpink') || val.includes('bp') || val.includes('blink')) {
+                errorMsg.innerText = "sino eta? yuck ewww 😖🤮👂";
+                errorMsg.classList.remove('hidden');
+                input.classList.add('border-red-400');
+            } else {
+                errorMsg.innerText = "Wrong. Hint: It's a group!";
+                errorMsg.classList.remove('hidden');
+                input.classList.add('border-red-400');
+            }
         }
 
         function goToTwiceStory() { document.getElementById('page-twice').classList.add('hidden-page'); document.getElementById('story-twice').classList.remove('hidden-page'); }
@@ -678,7 +691,13 @@
         }
         function hideSliderError() { document.getElementById('err-6').classList.add('hidden'); document.getElementById('slider-hint').classList.remove('hidden'); }
 
-        function solveLogic() { document.getElementById('grid-9').classList.add('hidden-page'); document.getElementById('success-9').classList.remove('hidden-page'); document.getElementById('btn-back-9').classList.remove('hidden'); }
+        function solveLogic() { 
+            document.getElementById('grid-9').classList.add('hidden-page'); 
+            document.getElementById('success-9').classList.remove('hidden-page'); 
+            // ADDED: Hide the error if it was shown
+            document.getElementById('err-9').classList.add('hidden');
+            document.getElementById('btn-back-9').classList.remove('hidden'); 
+        }
 
         function showFinalResult(colorType) {
             const modal = document.getElementById('result-modal');
