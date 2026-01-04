@@ -88,8 +88,8 @@
             // 1. Get Current Date
             const now = new Date();
             // Format to DD.MM.YYYY
-            const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-            const formattedDate = now.toLocaleDateString('en-GB', options).replace(/\//g, '.');
+            const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
+            const formattedDate = now.toLocaleDateString('en-PH', options).replace(/\//g, '.');
             
             // 2. Set the date in the card
             document.getElementById('proposal-date').innerText = formattedDate;
