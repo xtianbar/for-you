@@ -23,7 +23,7 @@
     </script>
     <style>
         body { font-family: 'Roboto', sans-serif; }
-        .fade-in { animation: fadeIn 1s ease-in; }
+        .fade-in { animation: fadeIn 1.5s ease-in; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         
         /* Heartbeat animation for the YES button */
@@ -42,7 +42,7 @@
 
     <div id="question-card" class="bg-white max-w-md w-full rounded-2xl shadow-2xl overflow-hidden p-8 text-center fade-in border-t-8 border-love-pink">
         
-        <h1 class="text-3xl font-bold text-gray-800 mb-6">Denis,</h1>
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Denise,</h1>
         
         <p class="text-gray-600 mb-8 text-lg leading-relaxed">
             We've walked through the memories, the laughs, and the secrets.
@@ -57,10 +57,6 @@
         <button onclick="acceptProposal()" class="w-full bg-rose-500 text-white font-bold text-xl py-4 rounded-full shadow-lg hover:bg-rose-600 transition transform hover:-translate-y-1 heartbeat">
             YES ❤️
         </button>
-        
-        <div class="mt-4">
-            <a href="love.html" class="text-xs text-gray-300 hover:text-gray-400">Back</a>
-        </div>
     </div>
 
     <div id="result-modal" class="fixed inset-0 bg-white z-50 hidden flex-col items-center justify-center p-6 text-center fade-in">
@@ -92,9 +88,6 @@
             card.classList.add('hidden');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            
-            // Optional: Trigger confetti here if you added a library, 
-            // but for now the visual change is impactful enough.
         }
     </script>
 </body>
